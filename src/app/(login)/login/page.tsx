@@ -1,7 +1,8 @@
 "use client";
 
+import Button from '@/components/Button';
 import { login } from '@/services/endpoints/auth/auth';
-import { Button, Typography, Stack, TextField, Link as LinkMUI, Alert } from '@mui/material'
+import { Typography, Stack, TextField, Link as LinkMUI, Alert } from '@mui/material'
 import Link from 'next/link';
 import { useCallback, useState } from 'react';
 
@@ -58,7 +59,7 @@ const Page = () => {
           value={formValue.password}
           onChange={(event) => setFormValue(formValue => ({...formValue, password: event.target.value}))}
         />
-        <Button variant='contained' color='primary' type='submit' disabled={loading}>
+        <Button variant='contained' color='primary' type='submit' disabled={loading} loading={loading}>
           Entrar
         </Button>
         <LinkMUI href='/login/forgot' variant='body2' component={Link}>Esqueci minha senha</LinkMUI>
